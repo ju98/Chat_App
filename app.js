@@ -18,3 +18,11 @@ const express=require('express');
 */
 console.log('Waiting on localhost:3000');
 
+
+const redis=require('redis');
+	const client=redis.createClient();
+	client.on('connect', function() {
+		console.log('Connected to redis server');
+	});
+module.exports.redis_client=client;
+
